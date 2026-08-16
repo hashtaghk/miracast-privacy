@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy policy for the Miracast - Screen Mirroring Android app (harix.screen.miracast.mirroring).">
+<meta name="robots" content="index, follow">
+<title>Miracast — Privacy Policy</title>
+<style>
+  :root {
+    --ground: #F2F6FB;
+    --surface: #FFFFFF;
+    --surface-2: #E7EFF9;
+    --ink: #0E1720;
+    --muted: #59697C;
+    --rule: #D6E2EF;
+    --accent: #1667CC;
+    --accent-ink: #0F4E9E;
+    --local: #0F7A5A;
+    --local-bg: #E4F4EE;
+
+    --font-display: "Avenir Next", Avenir, "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+    --measure: 68ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0B0F14;
+      --surface: #141B23;
+      --surface-2: #1A242E;
+      --ink: #E7EEF6;
+      --muted: #93A5B8;
+      --rule: #243039;
+      --accent: #7CB8FF;
+      --accent-ink: #9CCBFF;
+      --local: #6FD6B0;
+      --local-bg: #14271F;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #0B0F14;
+    --surface: #141B23;
+    --surface-2: #1A242E;
+    --ink: #E7EEF6;
+    --muted: #93A5B8;
+    --rule: #243039;
+    --accent: #7CB8FF;
+    --accent-ink: #9CCBFF;
+    --local: #6FD6B0;
+    --local-bg: #14271F;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0 24px 96px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  header.masthead {
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 32px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 6vw, 48px);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.022em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .dateline { color: var(--muted); font-size: 15px; margin: 0; }
+
+  .summary {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 28px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .summary h2 {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.012em;
+    margin: 0;
+  }
+
+  .summary ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+
+  /* The defining fact of a casting app: what stays on the LAN vs what leaves it. */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .panel {
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--surface);
+  }
+
+  .panel.stays { background: var(--local-bg); border-color: transparent; }
+
+  .panel h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .panel.stays h3 { color: var(--local); }
+  .panel.leaves h3 { color: var(--accent); }
+
+  .panel ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
+
+  nav.toc { border-left: 2px solid var(--accent); padding-left: 20px; }
+
+  nav.toc ol { margin: 0; padding-left: 18px; columns: 2; column-gap: 32px; font-size: 15px; }
+
+  nav.toc li { margin-bottom: 6px; break-inside: avoid; }
+
+  section { display: flex; flex-direction: column; gap: 14px; }
+
+  h2.clause {
+    font-family: var(--font-display);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 24px 0 0;
+    line-height: 1.25;
+    text-wrap: balance;
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+  }
+
+  h2.clause .num {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 400;
+    letter-spacing: 0;
+    flex: none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h3.sub { font-size: 16px; font-weight: 700; margin: 14px 0 0; letter-spacing: 0.01em; }
+
+  p { margin: 0; }
+  ul, ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+
+  a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    background: var(--surface-2);
+    padding: 2px 6px;
+    border-radius: 5px;
+    word-break: break-word;
+  }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 12px; }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 15px;
+    min-width: 560px;
+    background: var(--surface);
+  }
+
+  th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+
+  th {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  .callout { background: var(--surface-2); border-radius: 12px; padding: 20px 24px; font-size: 15.5px; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+    color: var(--muted);
+    font-size: 14.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  @media (max-width: 620px) {
+    nav.toc ol { columns: 1; }
+    .split { grid-template-columns: 1fr; }
+    body { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <span class="eyebrow">Miracast — Screen Mirroring for Android</span>
+    <h1>Privacy Policy</h1>
+    <p class="dateline">Last updated 16 August 2026 · Applies to app version 11.0 and later</p>
+  </header>
+
+  <div class="summary">
+    <h2>The short version</h2>
+    <ul>
+      <li>There is no account and no sign-in. We never ask for your name, email or phone number.</li>
+      <li><strong>Your screen is never sent to us.</strong> Browser Mirroring runs a small web server on your own phone, and the picture travels straight to the browser on your network. We operate no server that receives it.</li>
+      <li>The photos, videos, music and PDFs you open stay on your device. Nothing is uploaded.</li>
+      <li>The app is funded by ads, so Google receives your device's advertising ID.</li>
+      <li>The app is excluded from Android backup, so its data is not copied to your Google account.</li>
+    </ul>
+  </div>
+
+  <div class="split">
+    <div class="panel stays">
+      <h3>Never leaves your network</h3>
+      <ul>
+        <li>Everything shown on your mirrored screen</li>
+        <li>Photos, videos, audio and documents you open</li>
+        <li>Anything you type or browse while mirroring</li>
+        <li>The address and port of the phone's local server</li>
+      </ul>
+    </div>
+    <div class="panel leaves">
+      <h3>Sent to Google</h3>
+      <ul>
+        <li>Your device's advertising ID</li>
+        <li>Coarse device, network and language data</li>
+        <li>Which screens you opened, anonymously</li>
+        <li>A stack trace when the app crashes</li>
+      </ul>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <ol>
+      <li><a href="#who">Who this policy covers</a></li>
+      <li><a href="#modes">How the two mirroring modes work</a></li>
+      <li><a href="#collect">What the app collects</a></li>
+      <li><a href="#never">What it never collects</a></li>
+      <li><a href="#sharing">Who receives data</a></li>
+      <li><a href="#permissions">Permissions</a></li>
+      <li><a href="#legal">Legal bases (UK &amp; EEA)</a></li>
+      <li><a href="#choices">Your choices and rights</a></li>
+      <li><a href="#retention">Retention and deletion</a></li>
+      <li><a href="#backup">Device backups</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#transfers">International transfers</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="who">
+    <h2 class="clause"><span class="num">01</span>Who this policy covers</h2>
+    <p>This policy explains how the Android app <strong>Miracast — Screen Mirroring</strong> (package <code>harix.screen.miracast.mirroring</code>) handles information. It applies to the app only, not to the television, streaming stick or computer you mirror to, and not to any website you visit while mirroring.</p>
+    <p>The app is published by <strong>[DEVELOPER OR COMPANY LEGAL NAME]</strong>, trading on Google Play as Harix DevCo, the data controller for the purposes of UK and EU data protection law. Contact details are in section 15.</p>
+  </section>
+
+  <section id="modes">
+    <h2 class="clause"><span class="num">02</span>How the two mirroring modes work</h2>
+    <p>The app offers two routes to a second screen, and they have quite different privacy characteristics. It is worth being precise about both.</p>
+
+    <h3 class="sub">Screen Mirroring (Miracast)</h3>
+    <p>This option does not mirror anything itself. It opens Android's own <em>Cast</em> settings panel and hands over to the operating system, which then talks directly to your television over Wi-Fi Direct. The app sees neither the connection nor the picture, and it holds no record of which devices you connected to. If your phone has no wireless display support, the app tells you so and offers Browser Mirroring instead.</p>
+
+    <h3 class="sub">Browser Mirroring</h3>
+    <p>This one is the app's own implementation, and the important point is that it is entirely local. When you start it, Android's screen capture permission dialog appears — the standard system prompt warning that everything on screen will be captured — and nothing is captured until you accept it. The app then starts a small web server <em>on your phone</em> and shows you an address such as <code>https://192.168.1.24:8080</code>. You type that address into a browser on a device on the same network, and the video stream travels directly from your phone to that browser.</p>
+    <div class="callout">There is no relay server in the middle. The app is not configured with any STUN or TURN server, which is precisely why both devices must be on the same Wi-Fi network — the connection cannot traverse the internet. Your screen content never reaches infrastructure operated by us or by anyone else.</div>
+    <p>Anyone on your network who knows the address can open that stream while it is running, so use it on networks you trust, and stop sharing when you are finished. Screen capture stops when you stop the share or dismiss the notification.</p>
+  </section>
+
+  <section id="collect">
+    <h2 class="clause"><span class="num">03</span>What the app collects</h2>
+
+    <h3 class="sub">Your screen, only while you are mirroring</h3>
+    <p>During Browser Mirroring the app captures your display through Android's MediaProjection service in order to encode and send it to your browser. It is processed in memory and streamed; it is not recorded, not written to storage and not transmitted anywhere except the browser you pointed at your phone. A persistent notification stays in your status bar for as long as capture is active, as Android requires.</p>
+
+    <h3 class="sub">Files you choose to open</h3>
+    <p>The photo, video, audio and PDF buttons hand over to Android's own picker. You select one item, the system grants the app access to that item alone, and the app displays or plays it locally so it appears on the mirrored screen. The app does not scan, index, copy or upload your library, and it holds no storage permission that would let it.</p>
+
+    <h3 class="sub">Advertising</h3>
+    <p>The app is free and funded by banner, interstitial and native ads served by Google AdMob. To serve them, Google receives your device's advertising ID, coarse device and network information, and how you interacted with an ad.</p>
+
+    <h3 class="sub">Analytics and crash reports</h3>
+    <p>Firebase Analytics records anonymous usage — app opens, screens viewed, device model, language and country — so we can tell which features are worth keeping. Firebase Crashlytics records a stack trace, device state and app version when the app crashes, so it can be fixed. Neither is used to build a profile of you as a person.</p>
+
+    <h3 class="sub">Language preference</h3>
+    <p>The interface language you pick is stored on your device so the app opens in it next time. It stays on the device.</p>
+  </section>
+
+  <section id="never">
+    <h2 class="clause"><span class="num">04</span>What it never collects</h2>
+    <ul>
+      <li>No account, sign-in, name, email address or phone number.</li>
+      <li>No copy of your screen. Nothing captured during mirroring is stored or sent to us.</li>
+      <li>No location. The app requests no location permission of any kind.</li>
+      <li>No microphone recording. The app holds no microphone permission.</li>
+      <li>No scanning of your photo, video or music library — only the single file you pick.</li>
+      <li>No contacts, calendar, call logs or messages.</li>
+      <li>No payment details. There are no in-app purchases.</li>
+    </ul>
+  </section>
+
+  <section id="sharing">
+    <h2 class="clause"><span class="num">05</span>Who receives data</h2>
+    <p>We do not sell your data and we do not share it with anyone for their own marketing. We run no server of our own, so there is no database of users anywhere. Data reaches these processors only for the purposes described above:</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Recipient</th><th scope="col">What it receives</th><th scope="col">Why</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google — AdMob</td>
+            <td>Advertising ID, device and network data, ad interactions</td>
+            <td>To serve the ads that fund the app</td>
+          </tr>
+          <tr>
+            <td>Google — Firebase Analytics</td>
+            <td>Anonymous app usage and device characteristics</td>
+            <td>To understand which features are used</td>
+          </tr>
+          <tr>
+            <td>Google — Firebase Crashlytics</td>
+            <td>Crash traces, device state, app version</td>
+            <td>To diagnose and fix crashes</td>
+          </tr>
+          <tr>
+            <td>The browser you choose</td>
+            <td>Your live screen, over your local network only</td>
+            <td>Because that is the mirroring you asked for</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Google's handling of this data is governed by the <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a>. Ad personalisation can be reviewed at <a href="https://myadcenter.google.com" rel="noopener noreferrer" target="_blank">My Ad Center</a>.</p>
+  </section>
+
+  <section id="permissions">
+    <h2 class="clause"><span class="num">06</span>Permissions the app requests</h2>
+    <ul>
+      <li><code>INTERNET</code> — to load ads and to serve the mirroring stream on your network.</li>
+      <li><code>ACCESS_NETWORK_STATE</code> — to work out which network you are on and show you the right address to type into your browser.</li>
+      <li><code>FOREGROUND_SERVICE</code> and <code>FOREGROUND_SERVICE_MEDIA_PROJECTION</code> — to keep mirroring running, with a visible notification, while you use other apps. This is what makes screen sharing useful, and Android requires the notification.</li>
+      <li><code>POST_NOTIFICATIONS</code> — to show that mirroring notification. You can decline it.</li>
+      <li><code>WAKE_LOCK</code> — to stop the screen sleeping mid-share and cutting the stream.</li>
+      <li><code>com.google.android.gms.permission.AD_ID</code> — added by the Google Mobile Ads SDK to read the advertising ID.</li>
+    </ul>
+    <p>That is the complete list. There is deliberately no camera, storage, location, microphone or contacts permission: the camera and file buttons go through Android's own pickers, which need none.</p>
+    <p>Screen capture itself is not a manifest permission. It is granted per session through the system dialog described in section 2, and you can revoke it by stopping the share.</p>
+  </section>
+
+  <section id="legal">
+    <h2 class="clause"><span class="num">07</span>Legal bases (UK &amp; EEA)</h2>
+    <ul>
+      <li><strong>Performance of a contract</strong> — capturing and streaming your screen, and opening the files you select, because that is the service you asked the app to perform.</li>
+      <li><strong>Legitimate interests</strong> — crash reporting and advertising, so the app can stay working and stay free.</li>
+      <li><strong>Consent</strong> — where advertising or analytics law in your country requires your agreement before an identifier is used for personalised advertising. You can withdraw it at device level at any time, as described in section 8.</li>
+    </ul>
+  </section>
+
+  <section id="choices">
+    <h2 class="clause"><span class="num">08</span>Your choices and rights</h2>
+    <ul>
+      <li><strong>Stop mirroring at any time.</strong> Stopping the share, or dismissing the mirroring notification, ends screen capture immediately.</li>
+      <li><strong>Reset or delete your advertising ID.</strong> Android Settings › Privacy › Ads lets you reset the identifier or delete it entirely, which stops personalised advertising at the device level.</li>
+      <li><strong>Decline notifications.</strong> The app still works; you simply lose the mirroring indicator, and Android may then stop the share sooner.</li>
+      <li><strong>Delete everything.</strong> Uninstalling the app, or clearing its storage from Android Settings, removes the only data it keeps — your language preference and app settings.</li>
+      <li><strong>Statutory rights.</strong> Depending on where you live, you may have the right to access, correct, delete, port or restrict processing of your personal data, to object to it, and to complain to your data protection authority. Write to us using section 15 and we will respond within the period the law allows.</li>
+    </ul>
+    <div class="callout">Because the app holds no account and we operate no server, we usually cannot connect a request to any stored record — there is nothing on our side that identifies you. For data held by Google as a processor, use the Google links in section 5.</div>
+  </section>
+
+  <section id="retention">
+    <h2 class="clause"><span class="num">09</span>Retention and deletion</h2>
+    <p>Captured screen frames exist only in memory for as long as they are being streamed and are discarded immediately; nothing is retained after you stop sharing. Your language and app preferences stay on your device until you delete them or uninstall the app. Advertising, analytics and crash data are retained by Google under the retention periods set out in its documentation.</p>
+  </section>
+
+  <section id="backup">
+    <h2 class="clause"><span class="num">10</span>Device backups</h2>
+    <p>The app sets <code>allowBackup="false"</code>, which excludes it from Android's automatic backup system. Its settings are not copied to your Google account and will not reappear if you restore a new phone from a backup. You will simply pick your language again.</p>
+  </section>
+
+  <section id="children">
+    <h2 class="clause"><span class="num">11</span>Children</h2>
+    <p>Miracast — Screen Mirroring is a general-audience utility for showing a phone screen on a larger display. It is not directed at children, and it is not designed or marketed for use by anyone under 13 (or the equivalent minimum age where you live). We do not knowingly collect personal data from children. If you believe a child has used the app in a way that provided personal data, contact us and we will act on it.</p>
+  </section>
+
+  <section id="transfers">
+    <h2 class="clause"><span class="num">12</span>International transfers</h2>
+    <p>Mirroring itself involves no international transfer — the stream does not leave your local network. The Google services above process advertising, analytics and crash data on infrastructure located in several countries, which may be outside your own. Where data leaves the UK or EEA, Google applies the safeguards described in its privacy documentation, including the European Commission's standard contractual clauses.</p>
+  </section>
+
+  <section id="security">
+    <h2 class="clause"><span class="num">13</span>Security</h2>
+    <p>Traffic between the app and Google's services uses encrypted connections. The mirroring stream stays inside your local network and is not exposed to the internet by the app.</p>
+    <p>Two honest caveats. The local server presents a self-signed certificate, so your browser will warn you before you connect — that warning is expected here, but it does mean you should confirm you are on your own network and typing your own phone's address. And the share is reachable by anyone on the same network who knows the address while it is running, so treat public and shared Wi-Fi with caution. No system is perfectly secure, and we cannot guarantee absolute security — but the app holds no account credentials and no payment details, so there is little of value to lose.</p>
+  </section>
+
+  <section id="changes">
+    <h2 class="clause"><span class="num">14</span>Changes to this policy</h2>
+    <p>If this policy changes materially — for example if the app starts collecting something new — the date at the top of this page is updated and the revised version is published here before the change takes effect in a released version of the app.</p>
+  </section>
+
+  <section id="contact">
+    <h2 class="clause"><span class="num">15</span>Contact</h2>
+    <p>Questions, requests about your data, or anything in this policy that does not match what you see in the app:</p>
+    <p><strong>[DEVELOPER OR COMPANY LEGAL NAME]</strong><br>
+    Email: <a href="mailto:support@hashtaghk.com">support@hashtaghk.com</a></p>
+    <p>If you are in the UK you may complain to the Information Commissioner's Office; in the EEA, to your national supervisory authority.</p>
+  </section>
+
+  <footer>
+    <p>Miracast — Screen Mirroring · <code>harix.screen.miracast.mirroring</code></p>
+    <p>This document describes the app's behaviour as of version 11.0.</p>
+  </footer>
+
+</div>
+</body>
+</html>
