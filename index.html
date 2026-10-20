@@ -246,7 +246,7 @@
   <header class="masthead">
     <span class="eyebrow">Miracast &amp; Screen Mirroring for Android</span>
     <h1>Privacy Policy</h1>
-    <p class="dateline">Last updated 17 August 2026 · Applies to app version 12.0 and later</p>
+    <p class="dateline">Last updated 20 October 2026 · Applies to app version 13.1 and later</p>
   </header>
 
   <div class="summary">
@@ -254,8 +254,8 @@
     <ul>
       <li>There is no account and no sign-in. We never ask for your name, email or phone number.</li>
       <li><strong>Your screen is never sent to us.</strong> Browser Mirroring runs a small web server on your own phone, and the picture travels straight to the browser on your network. We operate no server that receives it.</li>
-      <li>The photos, videos, music and PDFs you open stay on your device. Nothing is uploaded.</li>
-      <li>The app is funded by ads, so Google receives your device's advertising ID. In the UK and EEA you are asked first, and you can change your answer any time in Settings.</li>
+      <li>The photos, videos, music and PDFs you open stay on your device. Nothing is uploaded. If you cast one to a TV, it goes from your phone to that TV over your own network only.</li>
+      <li>The app is funded by ads, so Google — and Meta, which bids to fill some of those ads through Google's ad system — receive your device's advertising ID. In the UK and EEA you are asked first, and you can change your answer any time in Settings.</li>
       <li>The app is excluded from Android backup, so its data is not copied to your Google account.</li>
     </ul>
   </div>
@@ -267,15 +267,17 @@
         <li>Everything shown on your mirrored screen</li>
         <li>Photos, videos, audio and documents you open</li>
         <li>Anything you type or browse while mirroring</li>
+        <li>A file you cast to a TV, and the TVs found on your network</li>
         <li>The address and port of the phone's local server</li>
       </ul>
     </div>
     <div class="panel leaves">
-      <h3>Sent to Google</h3>
+      <h3>Sent to Google (and Meta, for ads)</h3>
       <ul>
         <li>Your device's advertising ID</li>
         <li>Coarse device, network and language data</li>
         <li>Which screens you opened, anonymously</li>
+        <li>The model name of a TV you cast to</li>
         <li>A stack trace when the app crashes</li>
       </ul>
     </div>
@@ -284,7 +286,7 @@
   <nav class="toc" aria-label="Contents">
     <ol>
       <li><a href="#who">Who this policy covers</a></li>
-      <li><a href="#modes">How the two mirroring modes work</a></li>
+      <li><a href="#modes">How mirroring and casting work</a></li>
       <li><a href="#collect">What the app collects</a></li>
       <li><a href="#never">What it never collects</a></li>
       <li><a href="#sharing">Who receives data</a></li>
@@ -308,8 +310,8 @@
   </section>
 
   <section id="modes">
-    <h2 class="clause"><span class="num">02</span>How the two mirroring modes work</h2>
-    <p>The app offers two routes to a second screen, and they have quite different privacy characteristics. It is worth being precise about both.</p>
+    <h2 class="clause"><span class="num">02</span>How mirroring and casting work</h2>
+    <p>The app offers three routes to a second screen, and they have quite different privacy characteristics. It is worth being precise about each.</p>
 
     <h3 class="sub">Screen Mirroring (Miracast)</h3>
     <p>This option does not mirror anything itself. It opens Android's own <em>Cast</em> settings panel and hands over to the operating system, which then talks directly to your television over Wi-Fi Direct. The app sees neither the connection nor the picture, and it holds no record of which devices you connected to. If your phone has no wireless display support, the app tells you so and offers Browser Mirroring instead.</p>
@@ -318,6 +320,10 @@
     <p>This one is the app's own implementation, and the important point is that it is entirely local. When you start it, Android's screen capture permission dialog appears — the standard system prompt warning that everything on screen will be captured — and nothing is captured until you accept it. The app then starts a small web server <em>on your phone</em> and shows you an address such as <code>https://192.168.1.24:8080</code>. You type that address into a browser on a device on the same network, and the video stream travels directly from your phone to that browser.</p>
     <div class="callout">There is no relay server in the middle. The app is not configured with any STUN or TURN server, which is precisely why both devices must be on the same Wi-Fi network — the connection cannot traverse the internet. Your screen content never reaches infrastructure operated by us or by anyone else.</div>
     <p>Anyone on your network who knows the address can open that stream while it is running, so use it on networks you trust, and stop sharing when you are finished. Screen capture stops when you stop the share or dismiss the notification.</p>
+
+    <h3 class="sub">Casting a photo, video or song to a TV</h3>
+    <p>From a photo, video or audio screen you can play that one file on a Chromecast or on a smart TV that supports DLNA. A TV plays from a web address, so the app serves <em>only the file you chose</em> from a small server on your phone, and the TV fetches it over your local network. It is not uploaded anywhere, and the server stops when the session ends. While a file is playing on the TV, a notification lets you stop it (and pause it, on a Chromecast).</p>
+    <p>To list the TVs you can choose from, the app searches your local network: Chromecast devices are found by Google Play services' Cast framework on your phone, and DLNA TVs answer a standard network search (SSDP) with their name and model. That list is shown to you and is not stored. When you pick a TV, its <strong>model name</strong> (for example a TV brand and model number — not its name on your network, and not its address) is included in the app's analytics and crash reports, so we can see which TVs casting works or fails on.</p>
   </section>
 
   <section id="collect">
@@ -327,13 +333,14 @@
     <p>During Browser Mirroring the app captures your display through Android's MediaProjection service in order to encode and send it to your browser. It is processed in memory and streamed; it is not recorded, not written to storage and not transmitted anywhere except the browser you pointed at your phone. A persistent notification stays in your status bar for as long as capture is active, as Android requires.</p>
 
     <h3 class="sub">Files you choose to open</h3>
-    <p>The photo, video, audio and PDF buttons hand over to Android's own picker. You select one item, the system grants the app access to that item alone, and the app displays or plays it locally so it appears on the mirrored screen. The app does not scan, index, copy or upload your library, and it holds no storage permission that would let it.</p>
+    <p>The photo, video, audio and PDF buttons hand over to Android's own picker. You select one item, the system grants the app access to that item alone, and the app displays or plays it locally so it appears on the mirrored screen — or, if you choose to cast it, serves it to the TV you picked as described in section 2. The app does not scan, index, copy or upload your library, and it holds no storage permission that would let it.</p>
 
     <h3 class="sub">Advertising</h3>
-    <p>The app is free and funded by banner, interstitial, native and app open ads served by Google AdMob. An app open ad may appear when you return to the app after leaving it, but not when you come back from a screen the app itself opened — a file picker, the camera, your browser or the Cast panel. To serve any of these, Google receives your device's advertising ID, coarse device and network information, and how you interacted with an ad.</p>
+    <p>The app is free and funded by banner, interstitial, native and app open ads served through Google AdMob. An app open ad may appear when you return to the app after leaving it, but not when you come back from a screen the app itself opened — a file picker, the camera, your browser, the share sheet or the Cast panel. To serve any of these, Google receives your device's advertising ID, coarse device and network information, and how you interacted with an ad.</p>
+    <p>Some of these ads are filled by <strong>Meta Audience Network</strong>, which bids against Google for each ad through AdMob's mediation. To take part, Meta's software in the app receives the same kind of data: your advertising ID, device and network information (such as device model, operating system version and IP address) and your interactions with the ads it serves. Meta uses it to select and measure those ads and to prevent fraud.</p>
 
     <h3 class="sub">Analytics and crash reports</h3>
-    <p>Firebase Analytics records anonymous usage — app opens, screens viewed, device model, language and country — so we can tell which features are worth keeping. Firebase Crashlytics records a stack trace, device state and app version when the app crashes, so it can be fixed. Neither is used to build a profile of you as a person.</p>
+    <p>Firebase Analytics records anonymous usage — app opens, screens viewed, which steps of mirroring or casting succeeded or failed and why, why an ad was or was not shown, device model, language and country — so we can tell which features are worth keeping and fix what fails. For casting it includes the model name of the TV you chose (section 2). Firebase Crashlytics records a stack trace, device state and app version when the app crashes, so it can be fixed. Neither is used to build a profile of you as a person.</p>
 
     <h3 class="sub">Language preference</h3>
     <p>The interface language you pick is stored on your device so the app opens in it next time. It stays on the device.</p>
@@ -344,7 +351,7 @@
     <ul>
       <li>No account, sign-in, name, email address or phone number.</li>
       <li>No copy of your screen. Nothing captured during mirroring is stored or sent to us.</li>
-      <li>No location. The app requests no location permission of any kind.</li>
+      <li>No location. The app never asks for location and never reads it. Android 12 and older tie Wi-Fi network access to location permissions, so they appear in the app's manifest for those versions only (see section 6), but the app never requests them.</li>
       <li>No microphone recording. The app holds no microphone permission.</li>
       <li>No scanning of your photo, video or music library — only the single file you pick.</li>
       <li>No contacts, calendar, call logs or messages.</li>
@@ -367,13 +374,18 @@
             <td>To serve the ads that fund the app</td>
           </tr>
           <tr>
+            <td>Meta — Audience Network</td>
+            <td>Advertising ID, device and network data (including IP address), ad interactions</td>
+            <td>To bid for, serve and measure some of the ads that fund the app</td>
+          </tr>
+          <tr>
             <td>Google — Firebase Analytics</td>
-            <td>Anonymous app usage and device characteristics</td>
-            <td>To understand which features are used</td>
+            <td>Anonymous app usage and device characteristics; the model name of a TV you cast to</td>
+            <td>To understand which features are used and where they fail</td>
           </tr>
           <tr>
             <td>Google — Firebase Crashlytics</td>
-            <td>Crash traces, device state, app version</td>
+            <td>Crash traces, device state, app version; the model name of a TV you cast to</td>
             <td>To diagnose and fix crashes</td>
           </tr>
           <tr>
@@ -381,23 +393,31 @@
             <td>Your live screen, over your local network only</td>
             <td>Because that is the mirroring you asked for</td>
           </tr>
+          <tr>
+            <td>The TV or Chromecast you choose</td>
+            <td>The one file you cast, over your local network only</td>
+            <td>Because that is the casting you asked for</td>
+          </tr>
         </tbody>
       </table>
     </div>
-    <p>Google's handling of this data is governed by the <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a>. Ad personalisation can be reviewed at <a href="https://myadcenter.google.com" rel="noopener noreferrer" target="_blank">My Ad Center</a>.</p>
+    <p>Google's handling of this data is governed by the <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a>, and Meta's by the <a href="https://www.facebook.com/privacy/policy/" rel="noopener noreferrer" target="_blank">Meta Privacy Policy</a>. Ad personalisation can be reviewed at <a href="https://myadcenter.google.com" rel="noopener noreferrer" target="_blank">My Ad Center</a>.</p>
   </section>
 
   <section id="permissions">
     <h2 class="clause"><span class="num">06</span>Permissions the app requests</h2>
     <ul>
-      <li><code>INTERNET</code> — to load ads and to serve the mirroring stream on your network.</li>
-      <li><code>ACCESS_NETWORK_STATE</code> — to work out which network you are on and show you the right address to type into your browser.</li>
-      <li><code>FOREGROUND_SERVICE</code> and <code>FOREGROUND_SERVICE_MEDIA_PROJECTION</code> — to keep mirroring running, with a visible notification, while you use other apps. This is what makes screen sharing useful, and Android requires the notification.</li>
-      <li><code>POST_NOTIFICATIONS</code> — to show that mirroring notification. You can decline it.</li>
+      <li><code>INTERNET</code> — to load ads, and to serve the mirroring stream and cast files on your network.</li>
+      <li><code>ACCESS_NETWORK_STATE</code> and <code>ACCESS_WIFI_STATE</code> — to work out which network you are on, show you the right address to type into your browser, and check you are on Wi-Fi before mirroring or casting.</li>
+      <li><code>CHANGE_WIFI_MULTICAST_STATE</code> — to search your local network for DLNA TVs. Android drops that kind of network search otherwise.</li>
+      <li><code>NEARBY_WIFI_DEVICES</code>, declared with the flag that it is never used to derive location — and, on Android 12 and older only, <code>ACCESS_COARSE_LOCATION</code> and <code>ACCESS_FINE_LOCATION</code>, which those versions tie to Wi-Fi network access. The app never asks you for any of these, so they are not granted, and it never reads your location.</li>
+      <li><code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_MEDIA_PROJECTION</code> and <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code> — to keep mirroring, or a file playing on your TV, running with a visible notification while you use other apps. Android requires the notification.</li>
+      <li><code>POST_NOTIFICATIONS</code> — to show those notifications. You can decline it.</li>
       <li><code>WAKE_LOCK</code> — to stop the screen sleeping mid-share and cutting the stream.</li>
-      <li><code>com.google.android.gms.permission.AD_ID</code> — added by the Google Mobile Ads SDK to read the advertising ID.</li>
+      <li><code>com.google.android.gms.permission.AD_ID</code> and the <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code> and <code>ACCESS_ADSERVICES_TOPICS</code> permissions — added by the Google Mobile Ads SDK to read the advertising ID and use Android's Privacy Sandbox advertising features where your device offers them.</li>
+      <li><code>BIND_GET_INSTALL_REFERRER_SERVICE</code> — added by Google's SDKs to learn which Play Store campaign, if any, led to the install.</li>
     </ul>
-    <p>That is the complete list. There is deliberately no camera, storage, location, microphone or contacts permission: the camera and file buttons go through Android's own pickers, which need none.</p>
+    <p>That is the complete list. There is deliberately no camera, storage, microphone or contacts permission: the camera and file buttons go through Android's own pickers, which need none.</p>
     <p>Screen capture itself is not a manifest permission. It is granted per session through the system dialog described in section 2, and you can revoke it by stopping the share.</p>
   </section>
 
@@ -406,7 +426,7 @@
     <ul>
       <li><strong>Performance of a contract</strong> — capturing and streaming your screen, and opening the files you select, because that is the service you asked the app to perform.</li>
       <li><strong>Legitimate interests</strong> — crash reporting and advertising, so the app can stay working and stay free.</li>
-      <li><strong>Consent</strong> — personalised advertising. If you are in the UK or the EEA, a Google-certified consent form is shown when you first open the app, before any ad is requested, and the advertising SDK is not started until you have answered. You can change your answer at any time, as described in section 8.</li>
+      <li><strong>Consent</strong> — personalised advertising, by Google and by Meta. If you are in the UK or the EEA, a Google-certified consent form is shown when you first open the app, before any ad is requested, and the advertising SDK is not started until you have answered. You can change your answer at any time, as described in section 8.</li>
     </ul>
   </section>
 
@@ -420,12 +440,12 @@
       <li><strong>Delete everything.</strong> Uninstalling the app, or clearing its storage from Android Settings, removes the only data it keeps — your language preference and app settings.</li>
       <li><strong>Statutory rights.</strong> Depending on where you live, you may have the right to access, correct, delete, port or restrict processing of your personal data, to object to it, and to complain to your data protection authority. Write to us using section 15 and we will respond within the period the law allows.</li>
     </ul>
-    <div class="callout">Because the app holds no account and we operate no server, we usually cannot connect a request to any stored record — there is nothing on our side that identifies you. For data held by Google as a processor, use the Google links in section 5.</div>
+    <div class="callout">Because the app holds no account and we operate no server, we usually cannot connect a request to any stored record — there is nothing on our side that identifies you. For data held by Google or Meta, use the links in section 5.</div>
   </section>
 
   <section id="retention">
     <h2 class="clause"><span class="num">09</span>Retention and deletion</h2>
-    <p>Captured screen frames exist only in memory for as long as they are being streamed and are discarded immediately; nothing is retained after you stop sharing. Your language and app preferences stay on your device until you delete them or uninstall the app. Advertising, analytics and crash data are retained by Google under the retention periods set out in its documentation.</p>
+    <p>Captured screen frames exist only in memory for as long as they are being streamed and are discarded immediately; nothing is retained after you stop sharing. A cast file is served only while the casting session lasts, and the list of TVs found on your network is not stored. Your language and app preferences stay on your device until you delete them or uninstall the app. Advertising, analytics and crash data are retained by Google, and advertising data by Meta, under the retention periods set out in their documentation.</p>
   </section>
 
   <section id="backup">
@@ -440,12 +460,12 @@
 
   <section id="transfers">
     <h2 class="clause"><span class="num">12</span>International transfers</h2>
-    <p>Mirroring itself involves no international transfer — the stream does not leave your local network. The Google services above process advertising, analytics and crash data on infrastructure located in several countries, which may be outside your own. Where data leaves the UK or EEA, Google applies the safeguards described in its privacy documentation, including the European Commission's standard contractual clauses.</p>
+    <p>Mirroring and casting involve no international transfer — the stream and the cast file do not leave your local network. Google and Meta process advertising, analytics and crash data on infrastructure located in several countries, which may be outside your own. Where data leaves the UK or EEA, each applies the safeguards described in its privacy documentation, including the European Commission's standard contractual clauses.</p>
   </section>
 
   <section id="security">
     <h2 class="clause"><span class="num">13</span>Security</h2>
-    <p>Traffic between the app and Google's services uses encrypted connections. The mirroring stream stays inside your local network and is not exposed to the internet by the app.</p>
+    <p>Traffic between the app and Google's and Meta's services uses encrypted connections. The mirroring stream and cast files stay inside your local network and are not exposed to the internet by the app. A cast file is served over plain HTTP on your local network, because TVs cannot play from the phone's self-signed certificate — so, as with mirroring, cast on networks you trust.</p>
     <p>Two honest caveats. The local server presents a self-signed certificate, so your browser will warn you before you connect — that warning is expected here, but it does mean you should confirm you are on your own network and typing your own phone's address. And the share is reachable by anyone on the same network who knows the address while it is running, so treat public and shared Wi-Fi with caution. No system is perfectly secure, and we cannot guarantee absolute security — but the app holds no account credentials and no payment details, so there is little of value to lose.</p>
   </section>
 
@@ -464,7 +484,7 @@
 
   <footer>
     <p>Miracast &amp; Screen Mirroring · <code>harix.screen.miracast.mirroring</code></p>
-    <p>This document describes the app&rsquo;s behaviour as of version 12.0.</p>
+    <p>This document describes the app&rsquo;s behaviour as of version 13.1.</p>
   </footer>
 
 </div>
